@@ -7,7 +7,7 @@ Java library implements Belarussian cryptographic standards
 	sudo ldconfig  
 3. Install openjdk-7 and maven2 ```sudo apt-get install openjdk-7-jdk maven2```  
 4. ```mvn test```  
-### Windows  
+## Windows  
 1. Download and compile  bee2: https://github.com/agievich/bee2  
 2. Add bee2.dll to environmental variables.  
 3. Install jdk-7 and maven2   
