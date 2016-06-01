@@ -1,13 +1,13 @@
 # jbee2
 Java library implements Belarussian cryptographic standards  
-Linux  
+##Linux  
 1. Download and compile  bee2: https://github.com/agievich/bee2  
-2. Add libbee2.so to ldconfig:  
+2. Add libbee2.so to ldconfig:
 	```su -c "echo '/home/PATH/TO/FOLDER/CONTAINING/BEE2/' >  /etc/ld.so.conf.d/bee2.conf"```
-	sudo ldconfig
+	sudo ldconfig  
 3. Install openjdk-7 and maven2 ```sudo apt-get install openjdk-7-jdk maven2```  
 4. ```mvn test```  
-Windows  
+##Windows  
 1. Download and compile  bee2: https://github.com/agievich/bee2  
 2. Add bee2.dll to environmental variables.  
 3. Install jdk-7 and maven2   
