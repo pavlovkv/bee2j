@@ -26,7 +26,7 @@ public interface  Bee2Library extends Library{
 
         }
     }
-
+    Pointer beltGetH();
     int bignStdParams(BignParams bignParams, String name);
     int bignValParams(BignParams bignParams);
     int bignValPubkey(BignParams bignParams, byte[] pubKey);
@@ -82,5 +82,6 @@ public interface  Bee2Library extends Library{
             byte[] header,			/*!< [in] заголовок ключа [16]*/
             byte[] privkey);			/*!< [in] личный ключ получателя */
     int brngCTR_keep();
-    void brngCTRStart(Pointer state,byte[] theta,byte[] iv);
+    void brngCTRStart(byte[] state, byte[] theta, byte[] iv);
+    void brngCTRStepR(byte[] buf, int count, byte[] state);
 }

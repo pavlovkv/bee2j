@@ -12,6 +12,7 @@ import java.security.Security;
 public class BrngSecureRandomTest extends TestCase {
     public void testBrng()throws NoSuchAlgorithmException
     {
+       // System.out.println(bee2.brngCTR_keep());
         Security.addProvider(new Bee2SecurityProvider());
         SecureRandom b =SecureRandom.getInstance("brng");
         byte[] bytes = {123,-23};
