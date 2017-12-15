@@ -1,12 +1,10 @@
-package by.bsu.bee2j.provider;
+package by.bcrypto.bee2j.provider;
 
-import by.bsu.bee2j.BignParams;
-
+import by.bcrypto.bee2j.BignParams;
 import java.security.PublicKey;
-/**
- * Created by user on 05.05.2016.
- */
+
 public class BignPublicKey extends BignKey implements PublicKey {
+    byte[] publicKey;
     @Override
     public void setBytes(byte[] bytes) {
         super.setBytes(bytes);
@@ -14,10 +12,20 @@ public class BignPublicKey extends BignKey implements PublicKey {
     }
 
     public BignPublicKey() {
-        super();    //To change body of overridden methods use File | Settings | File Templates.
-    }
+        super();  }
 
     public BignPublicKey(byte[] bytes) {
-        super(bytes);    //To change body of overridden methods use File | Settings | File Templates.
+        super(bytes);
+        publicKey = bytes;
+    }
+    @Override
+    public byte[] getEncoded()
+    {
+        return publicKey;
+    }
+
+    @Override
+    public String getFormat() {
+        return "plain";
     }
 }

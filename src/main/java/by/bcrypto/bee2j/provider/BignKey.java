@@ -1,13 +1,9 @@
-package by.bsu.bee2j.provider;
+package by.bcrypto.bee2j.provider;
 
-
-import by.bsu.bee2j.BignParams;
-
+import by.bcrypto.bee2j.BignParams;
 import java.math.BigInteger;
 import java.security.*;
-/**
- * Created by user on 02.05.2016.
- */
+
 public abstract class BignKey implements Key{
     public byte[] bytes;
 

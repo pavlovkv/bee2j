@@ -1,31 +1,22 @@
-package by.bsu.bee2j.provider;
+package by.bcrypto.bee2j.provider;
 
-import by.bsu.bee2j.Bee2Library;
-
-import java.security.MessageDigest;
+import java.security.MessageDigestSpi;
 import java.util.ArrayList;
+import by.bcrypto.bee2j.Bee2Library;
 
-/**
- * Created by user on 18.05.2016.
- */
-public class BashMessageDigest extends MessageDigest {
+public class BeltMessageDigest extends MessageDigestSpi implements Cloneable {
+
     ArrayList<Byte> data = new ArrayList<Byte>();
-    public BashMessageDigest() {
-        super("Bash");
-    }
+
     protected void engineUpdate(byte input) {
         data.add(input);
     }
 
-    protected void engineUpdate(byte[] input){
-        for(byte b: input)
-            data.add(b);
-    }
-    @Override
     protected void engineUpdate(byte[] input, int offset, int len) {
-        for (byte b: input)
-            data.add(b);
+        for (int i = offset; i < offset + len; i++)
+            data.add(input[i]);
     }
+
     protected byte[] engineDigest() {
 
         byte[] bytes= Util.bytes(data);
@@ -33,16 +24,16 @@ public class BashMessageDigest extends MessageDigest {
         Bee2Library bee2 = Bee2Library.INSTANCE;
         byte[] hash = new byte[32];
 
-        int res = bee2.beltHash(hash,bytes, bytes.length);
+        int res = bee2.beltHash(hash, bytes, bytes.length);
         if(res!=0)
-            throw new RuntimeException("Bash hash was broken");
+            throw new RuntimeException("BeltHash hash was broken");
         return hash;
     }
+
     protected void engineReset() {
         data.clear();
     }
 
-    @Override
     protected int engineGetDigestLength() {
         return 32;
     }

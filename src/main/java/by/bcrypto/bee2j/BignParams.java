@@ -1,9 +1,5 @@
-package by.bsu.bee2j;
+package by.bcrypto.bee2j;
 
-/**
- * Created by user on 24.04.2016.
- */
-import by.bsu.bee2j.Bee2Library;
 import com.sun.jna.Structure;
 
 public class BignParams extends Structure implements Structure.ByReference {
